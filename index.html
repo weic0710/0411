@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sketch</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+  </head>
+
+  <body>
+    <ul class="menu">
+      <li onclick="hideIframe()">首頁</li>
+      <li>自我介紹</li>
+      <li class="submenu">
+        作品集
+        <ul class="submenu-items">
+          <li onclick="showIframe('https://hackmd.io/@weic90052/SyZFUIBckx')">第一周</li>
+          <li onclick="showIframe('https://hackmd.io/@weic90052/r19c7b-2kg')">第二周</li>
+          <li onclick="showIframe('https://hackmd.io/@weic90052/H1MtcTvs1e')">第三周</li>
+          <li>第四周</li>
+        </ul>
+      </li>
+      <li>測驗卷</li>
+      <li>教學影片</li>
+    </ul>
+    <iframe id="content-frame"></iframe>
+    <script src="sketch.js"></script>
+    <script>
+      function showIframe(url) {
+        const iframe = document.getElementById('content-frame');
+        iframe.src = url;
+        iframe.style.display = 'block';
+      }
+
+      function hideIframe() {
+        const iframe = document.getElementById('content-frame');
+        iframe.style.display = 'none';
+      }
+    </script>
+  </body>
+</html>
